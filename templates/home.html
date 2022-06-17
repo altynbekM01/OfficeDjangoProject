@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Home page</h1>
+    <hr>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'office:logout' %}">Logout</a>
+    {% else %}
+{#        <a href="{% url 'login' %}">Login</a>#}
+        <a href="{% url 'office:login' %}"><h3 class="agileinfo_sign">Sign In </h3></a>
+        <a href="{% url 'office:register' %}">Register</a>
+    {% endif %}
+{% endblock %}
